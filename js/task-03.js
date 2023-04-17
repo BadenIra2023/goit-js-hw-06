@@ -14,14 +14,10 @@ const images = [
 ];
 
 const addImagesEl = document.querySelector(".gallery")
-const fragmentEl = document.createDocumentFragment();
-images.forEach(({ url, alt }) => {
-  const img = document.createElement("img");
-  img.classList.add("add_foto");
-  img.src = url;
-  img.alt = alt;
-  console.log(img);
-  fragmentEl.appendChild(img);
-})
-console.log (fragmentEl)
-addImagesEl.appendChild(fragmentEl)
+const imgItems = images
+  .map(
+    ({ url, alt }) =>
+      `<li><img src="${url}" alt=${alt} class="add_foto"></li>`
+  )
+  .join("");
+addImagesEl.insertAdjacentHTML("beforeend", imgItems);

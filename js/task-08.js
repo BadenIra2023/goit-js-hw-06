@@ -11,6 +11,7 @@ function onSubmit(event) {
     if (user.password === "" || user.email === "") {
         alert("ВАЖЛИВО!!! Усі поля повинні бути заповнені.")
     }
-    console.log(user);
+    else { 
+    console.log(user);};
     event.currentTarget.reset();
 };
